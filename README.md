@@ -1,6 +1,6 @@
 # Arquillian-cube demo
 
-In my opinion the arquillian demo docs are rather lacking to get it running.
+In my opinion the [arquillian-cube docs](https://arquillian.org/arquillian-cube) are rather lacking to get it running.
 So I prepared this running demo project as a quickstart.
 
 Note: You need to have docker installed 
