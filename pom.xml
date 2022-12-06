@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>arquillian-cube</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Archetype - arquillian-cube</name>
+    <url>http://maven.apache.org</url>
+    <packaging>jar</packaging>
+
+    <properties>
+        <version.arquillian_cube>1.18.2</version.arquillian_cube>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>1.4.0.Final</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.arquillian.cube</groupId>
+                <artifactId>arquillian-cube-bom</artifactId>
+                <version>${version.arquillian_cube}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+
+        <!-- Arquillian -->
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit for tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Arquillian cube -->
+        <dependency>
+            <groupId>org.arquillian.cube</groupId>
+            <artifactId>arquillian-cube-docker</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Arquillian tomcat remote adapter -->
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-tomcat-remote-7</artifactId>
+            <version>1.0.0.CR7</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- java EE API: Allows the definition of a @WebServlet -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0-1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- slf4j (optional, otherwise no-op logs) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.4</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
